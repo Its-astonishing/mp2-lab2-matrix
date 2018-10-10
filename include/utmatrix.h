@@ -78,7 +78,6 @@ TVector<ValType>::TVector(const TVector<ValType> &v)
     Size = v.Size;
     StartIndex = v.StartIndex;
     pVector = new ValType[Size];
-    //memcpy(pVector, v.pVector, sizeof(ValType)*Size);
     for (int i = StartIndex; i < Size; i++)
         pVector[i] = v.pVector[i];
 } /*-------------------------------------------------------------------------*/
@@ -128,7 +127,6 @@ TVector<ValType>& TVector<ValType>::operator=(const TVector &v)
         delete[] pVector;
         pVector = new ValType[Size];
     }
-    //memcpy(pVector, v.pVector, sizeof(ValType)*Size);
     for (int i = StartIndex; i < Size; i++)
         pVector[i] = v.pVector[i];
     return *this;
@@ -274,6 +272,7 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
     }
     for (int i = 0; i < Size; i++)
         pVector[i] = mt.pVector[i];
+    return *this;
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // сложение
@@ -288,6 +287,6 @@ TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
     return TVector<TVector<ValType> >::operator-(mt);
 } /*-------------------------------------------------------------------------*/
 
-// TVector О3 Л2 П4 С6
- //TMatrix О2 Л2 П3 С3
+//TVector О3 Л2 П4 С6
+//TMatrix О2 Л2 П3 С3
 #endif

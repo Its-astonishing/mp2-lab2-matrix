@@ -25,7 +25,6 @@ TEST(TVector, throws_when_create_vector_with_negative_startindex)
 TEST(TVector, can_create_copied_vector)
 {
     TVector<int> v(10);
-
     ASSERT_NO_THROW(TVector<int> v1(v));
 }
 
@@ -52,14 +51,12 @@ TEST(TVector, copied_vector_has_its_own_memory)
 TEST(TVector, can_get_size)
 {
     TVector<int> v(4);
-
     EXPECT_EQ(4, v.GetSize());
 }
 
 TEST(TVector, can_get_start_index)
 {
     TVector<int> v(4, 2);
-
     EXPECT_EQ(2, v.GetStartIndex());
 }
 
@@ -67,7 +64,6 @@ TEST(TVector, can_set_and_get_element)
 {
     TVector<int> v(4);
     v[0] = 4;
-
     EXPECT_EQ(4, v[0]);
 }
 
@@ -241,4 +237,3 @@ TEST(TVector, cant_multiply_vectors_with_not_equal_size)
     TVector<int> bf1(size1), bf2(size2);
     EXPECT_ANY_THROW(bf1*bf2);
 }
-

@@ -117,7 +117,6 @@ TEST(TMatrix, compare_matrix_with_itself_return_true)
 {
     TMatrix<int> m1(5);
     m1[1][1] = 5;
-
     ASSERT_TRUE(m1 == m1);
 }
 
